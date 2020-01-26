@@ -1,5 +1,3 @@
-import math
-
 #1. The volume of a sphere with radius r is (4/3)\pi r^3.
 # What is the volume of a sphere with radius 5?
 def sphere_volume(r):
@@ -25,11 +23,9 @@ tempo = 7 + 12/60
 total_time = 2 * easy_pace + 3 * tempo
 start_time = 6 * 60 + 52
 end_time = start_time + total_time
-end_time_hr = end_time / 60
-hours = math.floor(end_time_hr)
-minutes = (end_time_hr - hours) * 60
-
-print(f'I will get home at {hours}:{minutes:.0f} am for breakfast')
+end_time_hr = end_time // 60
+end_time_min = end_time % 60
+print(f'I will get home at {end_time_hr:.0f}:{end_time_min:.0f} am for breakfast')
 
 #4. If my average grade rises from 82 to 89. What is the percentage of the increase? 
 # Format the result as 'xx.x%'. Keep one figure after decimal point.
