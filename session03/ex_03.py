@@ -24,7 +24,10 @@ minute2 = (current // 60) % 60
 hour2 = (current // 60) // 60 % 24
 day2 = current // 60 // 60 // 24
 
-print(f'CURRENT TIME: {int(day2):d} days, {int(hour2):d} hours, {int(minute2):d} minutes, {int(second2):d} seconds past the epoch')
+print(f'CURRENT TIME: {int(day2)} days, {int(hour2)} hours, {int(minute2):d} minutes, {int(second2):d} seconds past the epoch')
+
+
+
 
 
 

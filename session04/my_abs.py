@@ -33,7 +33,7 @@ def give_me_a_break():
 def give_me_two_breaks():
     str1 = 'break'
     return str1 # break the function, never gets to the next line
-    print('another break')
+    # print('another break')
 
 # print(give_me_two_breaks())
 
