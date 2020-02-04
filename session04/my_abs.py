@@ -44,4 +44,4 @@ def move(x, y, step, angle):
     return nx, ny
 
 x, y = move(100, 100, 60, math.pi / 6)
-print(x, y)
+# print(x, y)
