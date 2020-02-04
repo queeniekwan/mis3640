@@ -2,17 +2,11 @@ import turtle
 
 andrew = turtle.Turtle()
 
-print(andrew)
+# print(andrew)
 
-andrew.fd(100)
-andrew.lt(90)
-andrew.fd(100)
-andrew.lt(90)
-andrew.fd(100)
-andrew.lt(90)
-andrew.fd(100)
-
-
-
-
+# draw a square
+for i in range(4):
+    andrew.fd(100)
+    andrew.lt(90)
+    
 turtle.mainloop()
