@@ -4,4 +4,7 @@ import mypolygon
 
 daniel = turtle.Turtle()
 
-mypolygon.circle(daniel, 100)
+# mypolygon.circle(daniel, r = 100)
+mypolygon.square(daniel,100)
+
+

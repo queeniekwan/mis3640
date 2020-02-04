@@ -57,14 +57,14 @@ def circle(t, r):
 
 
 def main():
-    # andrew = turtle.Turtle()
+    andrew = turtle.Turtle()
     # square(andrew,200)
     # polyline(andrew, n = 4, length = 50, angle = 60)
     # polygon(andrew, length = 50, n = 6)
     # arc(andrew, r = 100, angle = 360)
     # circle(andrew, n = 100)
     turtle.mainloop()
-    
+
 if __name__ == "__main__":
     main()
 
