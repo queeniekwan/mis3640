@@ -79,7 +79,7 @@ def circle_triangle (t, r):
 def main():
     t = turtle.Turtle()
     t.speed(0)
-    # circle_flower(t,100)
+    circle_flower(t,100)
     # yinyang(t)
     # circle_triangle(t, 100)
 
