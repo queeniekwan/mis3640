@@ -50,21 +50,10 @@ def circle_triangle (t, r):
     t.rt(60)
 
     move(t,0,(100 - (r * math.cos(math.radians(30)))
-    # r_small = r * abs(math.tan(60))
-    # circle(t, r_small)
-    
-        
-    
+    r_small = r * abs(math.tan(math.radians(60)))
+    circle(t, r_small)
 
     
-def main():
-    t = turtle.Turtle()
-    t.speed(0)
-    # circle_flower(t)
-    # yinyang(t)
-    circle_triangle(t,100)
-    turtle.Screen().mainloop()
-
 
 if __name__ == "__main__":
     main()
