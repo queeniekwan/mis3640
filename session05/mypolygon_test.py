@@ -8,12 +8,14 @@ import mypolygon
 # mypolygon.square(daniel,100)
 
 r = 100
+angle = math.radians(30)
+print(100 - (r * math.cos(angle)))
 
-r_small = (r / 2) / abs(math.tan(30))
-print(r_small)
-print(math.cos(90*math.pi/180))
-print(r * math.cos(30))
-math.cos()
+# move(t,0,(100 - (r * math.cos(math.radians(30)))
+    # circle(t, r * math.tan(math.radians(60)))
+
+
+
 
 
 
