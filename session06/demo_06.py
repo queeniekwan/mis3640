@@ -99,6 +99,9 @@ def countdown(n):
         countdown(n-1)
 
 def fibonacci(n):
+    """
+    return the nth fibonacci number
+    """
     if n ==1 or n ==2:
         return 1
     else:
