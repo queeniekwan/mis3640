@@ -38,7 +38,7 @@ def circle(t, r):
 
 def move(t, x, y):
     """
-    Moves Turtle (t) forward (x,y) units without leaving a trail
+    Moves Turtle (t) to (x,y) without leaving a trail
     Leaves the pen down
     """
     t.pu()
