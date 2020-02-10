@@ -49,7 +49,7 @@ def BMI_Calculator (height, weight):
     else:
         print('Obesity')
 
-def compare (a, b):
+def compare(a, b):
     """
     """
     if isinstance(a, str) or isinstance(b, str):
