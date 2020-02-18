@@ -86,12 +86,71 @@ def receipt():
     print('-' * (width+15))
     print(f'Total {money_symbol:>{width+10-5-len(str(total_price))}}{total_price:.2f}')
 
+# Exercise 5
+def any_lowercase(s):
+    """
+    Checks if the first letter in string s is lowercase. Ture if yes, False if not
+    """
+    for c in s:
+        if c.islower():
+            return True
+        else:
+            return False
+
+def any_lowercase2(s):
+    """
+    Returns 'Ture' all the time since 'c' is a lowercase
+    """
+    for c in s:
+        if 'c'.islower():
+            return 'True'
+        else:
+            return 'False'
+
+def any_lowercase3(s):
+    """
+    Checks if the last letter in string s is lowercase. True if yes, False if not
+    """
+    for c in s:
+        flag = c.islower()
+    return flag
+
+def any_lowercase4(s):
+    """
+    Returns True if at least one letter in string s is lowercase, False if all letters are uppercase
+    """
+    flag = False
+    for c in s:
+        flag = flag or c.islower()
+    return flag
+
+def any_lowercase5(s):
+    """
+    Returns False if at least one letter in string s is uppercase, True if all letters are lowercase
+    """
+    for c in s:
+        if not c.islower():
+            return False
+    return True
+
+def rotate_word(s,i):
+    """
+    Rotate the word s (string) by i (integer) position
+    """
+    new_string = ''
+    for letter in s:
+        new_string += chr(ord(letter)+i)
+    return new_string
+
 def main():
     # guess_game_whileloop()
     # guess_game_forloop()
     # print(count('queenie', 'e'))
     # print(item_price('potato chips'))
-    receipt()
+    # receipt()
+    # print(any_lowercase5('aaA'))
+    print(rotate_word('IBM',-1))
+
 
 if __name__ == '__main__':
     main()
