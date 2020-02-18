@@ -64,29 +64,34 @@ def count(string, letter):
 def item_price(item):
     price = 0
     for letter in item:
-    #     if letter == ' ':
-    #         continue
-    #     else:
-        price += (ord(letter) - 96)
+        if letter == ' ':
+            continue
+        else:
+            price += (ord(letter) - 96)
     return price
 
 def receipt():
-    item_list = ['bananas', 'rice', 'paprika', 'potato chips']
+    item_list = ['bananas', 'rice', 'paprika','potato chips','pussy kitty doggo']
     total_price =  0
+    width = 0
+    money_symbol = '$'
     for item in item_list:
-        print(f'{item} ${item_price(item)}')
-        total_price += item_price(item)
-    print('-' * 20)
-    print(f'Total ${total_price}')
+        if len(item) > width:
+            width = len(item)
 
+    for item in item_list:
+        print(f'{item} {money_symbol:>{width+10-len(item)-len(str(item_price(item)))}}{item_price(item):.2f}')
+        total_price += item_price(item)
+    
+    print('-' * (width+15))
+    print(f'Total {money_symbol:>{width+10-5-len(str(total_price))}}{total_price:.2f}')
 
 def main():
     # guess_game_whileloop()
     # guess_game_forloop()
-    print(count('queenie', 'e'))
-    print(item_price('potato chips'))
+    # print(count('queenie', 'e'))
+    # print(item_price('potato chips'))
     receipt()
-
 
 if __name__ == '__main__':
     main()
