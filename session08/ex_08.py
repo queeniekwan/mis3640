@@ -133,6 +133,7 @@ def any_lowercase5(s):
             return False
     return True
 
+# Exercise 6
 def rotate_word(s,i):
     """
     Rotate the word s (string) by i (integer) position
