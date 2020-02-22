@@ -128,17 +128,32 @@ def uses_all(word, required):
     takes a word and a string of required letters, and that returns True if
     the word uses all the required letters at least once.
     """
-    pass
+    if required in word:
+        return True
+    else:
+        return False
 
 
 # please write test cases
+# print(uses_all('Babson', 'abs'))
+# print(uses_all('Babson', 'abc'))
+
 
 
 def find_words_using_all_vowels():
     """
     return the number of the words that use all the vowel letters
     """
-    pass
+    f = open('session09/words.txt')
+
+    words_using_all_vowels = 0
+
+    for line in f:
+        word = line.strip()
+        if uses_all(word, 'aeiou'):
+            words_using_all_vowels += 1
+    
+    return words_using_all_vowels
 
 
 # print('The number of words that use all the vowels:', find_words_using_all_vowels())
@@ -149,8 +164,14 @@ def is_abecedarian(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    previous = word[0]
 
+    for letter in word:
+        if letter < previous:
+            return False
+    previous = letter
+    
+    return True
 
 # print(is_abecedarian('abs'))
 # print(is_abecedarian('college'))
@@ -160,7 +181,16 @@ def find_abecedarian_words():
     """
     returns the number of abecedarian words
     """
-    pass
+    f = open('session09/words.txt')
+
+    abecedarian_words = 0
+
+    for line in f:
+        word = line.strip()
+        if is_abecedarian(word):
+            abecedarian_words += 1
+    
+    return abecedarian_words
 
 
 # print(find_abecedarian_words())
@@ -171,10 +201,21 @@ def is_abecedarian_using_recursion(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    length = len(word)
+    second_to_last = word[length - 2]
+    last = word[length - 1]
 
+    for _ in range(length-1):
+        if second_to_last > last:
+                return False
+        else:
+            new_word = word[:length-1]
+            return is_abecedarian_using_recursion(new_word)
+
+    return True
 
 # print(is_abecedarian_using_recursion('abcdef'))
+# print(is_abecedarian_using_recursion('acbdef'))
 
 
 def is_abecedarian_using_while(word):
@@ -182,4 +223,15 @@ def is_abecedarian_using_while(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    previous = word[0]
+    i = 0
+    while i <= len(word)-2:
+        if word[i] < previous:
+            return False
+        previous = word[i]
+        i += 1
+    
+    return True
+
+# print(is_abecedarian_using_while('abcdefg'))
+# print(is_abecedarian_using_while('acbdefg'))
