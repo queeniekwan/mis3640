@@ -97,6 +97,6 @@ b.sort(reverse=True)
 print(b)
 
 name = ['ava', 'bella', 'jessica', 'david', 'cami']
-name.sort(key=len)
+name.sort(key=len) # sort by the length of each element in the list
 print(name)
 
