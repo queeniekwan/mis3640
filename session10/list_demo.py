@@ -96,7 +96,21 @@ print(b)
 b.sort(reverse=True)
 print(b)
 
+# sorted function - doesn't change the string/list
+print(sorted(b))
+
 name = ['ava', 'bella', 'jessica', 'david', 'cami']
 name.sort(key=len) # sort by the length of each element in the list
 print(name)
 
+# convert between string and list
+name = 'queenie'
+name_list = list(name)
+
+name2 = ''.join(name_list)
+name3 = '_'.join(name_list)
+
+# return normal name
+name3.split('_')
+name3.replace('_','')
+name3[::2]

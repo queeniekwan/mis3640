@@ -74,10 +74,9 @@ def is_sorted(t):
     >>> is_sorted(['b', 'a'])
     False
     """
-    original_t = t[:]
-    t.sort()
+    sort_list = sorted(t)
 
-    return original_t == t
+    return sort_list == t
 
 
 def is_anagram(word1, word2):
@@ -95,9 +94,9 @@ def is_anagram(word1, word2):
     >>> is_anagram([1, 2, 2], [2, 1, 2])
     Ture
     """
-    for i, item in enumerate(t):
-        pass
-    return
+
+    return sorted(word1) == sorted(word2)
+
 
 
 def has_duplicates(s):
@@ -110,7 +109,12 @@ def has_duplicates(s):
     >>> print(has_duplicates('abba'))
     True
     """
-    return
+    sort_list = sorted(s)
+    for i in range(1,len(s)):
+        if sort_list[i] == sort_list[i-1]:
+            return True
+
+    return False
 
 
 def has_adjacent_duplicates(s):
@@ -125,23 +129,26 @@ def has_adjacent_duplicates(s):
     >>> print(has_adjacent_duplicates('abbc'))
     True
     """
-    return
+    for i in range(1,len(s)):
+        if s[i] == s[i-1]:
+            return True
 
+    return False
 
 def main():
-    t = [[1, 2], [3], [4, 5, 6]]
-    print(nested_sum(t))
+    # t = [[1, 2], [3], [4, 5, 6]]
+    # print(nested_sum(t))
 
-    t = [1, 2, 3]
-    print(cumsum(t))
+    # t = [1, 2, 3]
+    # print(cumsum(t))
 
-    t = [1, 2, 3, 4]
-    print(middle(t))
-    chop(t)
-    print(t)
+    # t = [1, 2, 3, 4]
+    # print(middle(t))
+    # chop(t)
+    # print(t)
 
-    print(is_sorted([1, 2, 2]))
-    print(is_sorted(['b', 'a']))
+    # print(is_sorted([1, 2, 2]))
+    # print(is_sorted(['b', 'a']))
 
     # print(is_anagram('stop', 'pots'))
     # print(is_anagram('different', 'letters'))
@@ -149,6 +156,10 @@ def main():
 
     # print(has_duplicates('cba'))
     # print(has_duplicates('abba'))
+
+    print(has_adjacent_duplicates('cba'))
+    print(has_adjacent_duplicates('abca'))
+    print(has_adjacent_duplicates('abbc'))
 
 
 if __name__ == "__main__":
