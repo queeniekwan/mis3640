@@ -7,12 +7,11 @@ def nested_sum(t):
     >>> nested_sum(t)
     21
     """
-    sum_number = 0
+    total = 0
     for sublist in t:
-        for num in sublist:
-            sum_number += num
+        total += sum(sublist)
     
-    return sum_number
+    return total
 
 
 def cumsum(t):
@@ -25,11 +24,12 @@ def cumsum(t):
     [1, 3, 6]
     """
     cumulative_sum = 0
-    for i, num in enumerate(t):
-        cumulative_sum += num
-        t[i] = cumulative_sum
+    res = []
+    for x in t:
+        cumulative_sum += x
+        res.append(cumulative_sum)
 
-    return t
+    return res
 
 
 def middle(t):
@@ -41,11 +41,7 @@ def middle(t):
     >>> middle(t)
     [2, 3]
     """
-    new_t = []
-    for i in range(1,len(t)-1):
-        new_t.append(t[i])
-
-    return new_t
+    return t[1:-1]
 
 
 def chop(t):
@@ -59,9 +55,7 @@ def chop(t):
     [2, 3]
     """
     del t[0]
-    del t[len(t)-1]
-
-    return t
+    del t[-1]
 
 
 def is_sorted(t):
@@ -74,9 +68,8 @@ def is_sorted(t):
     >>> is_sorted(['b', 'a'])
     False
     """
-    sort_list = sorted(t)
 
-    return sort_list == t
+    return sorted(t) == t
 
 
 def is_anagram(word1, word2):
