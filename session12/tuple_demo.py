@@ -51,3 +51,13 @@ def sumall(*nums):
 
 print(sumall(1))
 print(sumall(1, 2, 3))
+
+def multall(*nums):
+    result = 1
+    for num in nums:
+        result = result * num
+    return result
+
+print(multall(2, 3, 4, 5))
+
+
