@@ -64,7 +64,7 @@ def most_common(hist, excluding_stopwords = False):
     """
     t = []
 
-    stopwords = process_file('session14/stopwords.txt', skip_header=False)
+    stopwords = process_file('session14/stopwords.txt', skip_header = False)
 
     stopwords = list(stopwords.keys())
 
