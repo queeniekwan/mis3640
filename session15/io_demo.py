@@ -1,7 +1,7 @@
 '''files'''
-# with open('session15/new_file.txt', 'w') as f:
-#     for _ in range(10):
-#         f.write('something\n')
+with open('session15/new_file.txt', 'w') as f:
+    for _ in range(10):
+        f.write('something\n')
 
 # context manager
 # same as
