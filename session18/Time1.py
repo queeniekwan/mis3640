@@ -5,17 +5,17 @@ class Time:
     """
 
 
-# time = Time()
-# time.hour = 3
-# time.minute = 6
-# time.second = 30
+time = Time()
+time.hour = 3
+time.minute = 6
+time.second = 30
 
 # print(time.hour, time.minute, time.second)
 
-# later = Time()
-# later.hour = time.hour
-# later.minute = time.minute + 5
-# later.second = time.second
+later = Time()
+later.hour = time.hour 
+later.minute = time.minute + 5
+later.second = time.second 
 
 # print(later.hour, later.minute, later.second)
 
@@ -30,7 +30,7 @@ def print_time(t):
 
     t: Time object
     """
-    pass
+    print(f'{t.hour:02d}:{t.minute:02d}:{t.second:02d}')
 
 
 # print_time(time)
@@ -39,8 +39,20 @@ def print_time(t):
 
 def is_after(t1, t2):
     """Returns True if t1 is after t2; false otherwise."""
-    pass
-
+    if t1.hour >= t2.hour:
+        if t1.hour > t2.hour:
+            return True
+        elif t1.hour == t2.hour:
+            if t1.minute >= t2.minute:
+                if t1.minute > t2.minute:
+                    return True
+                elif t1.minute == t2.minute:
+                    if t1.second > t2.second:
+                        return True
+    
+    return False
+   
+        
 
 # print(is_after(time, later))
 # print(is_after(later, time))
@@ -92,15 +104,15 @@ def add_time2(t1, t2):
 
 
 # Uncomment below for testing
-# start = Time()
-# start.hour = 9
-# start.minute = 45
-# start.second = 0
+start = Time()
+start.hour = 9
+start.minute = 45
+start.second = 0
 
-# duration = Time()
-# duration.hour = 1
-# duration.minute = 35
-# duration.second = 0
+duration = Time()
+duration.hour = 1
+duration.minute = 35
+duration.second = 0
 
 # done = add_time2(start, duration)
 # print_time(done)
@@ -131,9 +143,22 @@ def increment(time, seconds):
 
 def increment_2(time, seconds):
     """return a Time object after incrementing"""
-    pass
+    n = Time()
+    n.hour = time.hour
+    n.minute = time.minute
+    n.second = time.second + seconds
 
+    if n.second >= 60:
+        n.second -= 60
+        n.minute += 1
 
+    if n.minute >= 60:
+        n.minute -= 60
+        n.hour += 1
+    
+    return n
+
+     
 # print_time(time)
 # incremented_time = increment_2(time, 50)
 # print_time(time)
@@ -188,7 +213,8 @@ def substract_time(t1, t2):
 
     returns: Time
     """
-    pass
+    duration = time_to_int(t1) - time_to_int(t2)
+    return int_to_time(duration)
 
 
 # print_time(substract_time(done, duration))
@@ -229,15 +255,15 @@ def add_time3(t1, t2):
     return int_to_time(seconds)
 
 
-# done = add_time3(start, duration)
+done = add_time3(start, duration)
 # print_time(done)
-# another = add_time3(done, duration)
+another = add_time3(done, duration)
 # print_time(another)
 
-# time1 = Time()
-# time1.hour = 1
-# time1.minute = 60
-# time1.second = 59
+time1 = Time()
+time1.hour = 1
+time1.minute = 60
+time1.second = 59
 
 # try:
 #     print_time(add_time3(time1, duration))
@@ -252,12 +278,23 @@ def add_time3(t1, t2):
 
 def mul_time(t1, factor):
     """Multiplies a Time object by a factor."""
-    pass
+    assert valid_time(t1)
+
+    return int_to_time(time_to_int(t1) * factor)
 
 
-# print_time(duration)
+print_time(duration)
 # print('after multiplied by 5:', end=' ')
 # print_time(mul_time(duration, 5))
+
+def average_pace(duration, distance):
+    """returns the time of average pace of the run
+    duration: the finishing time
+    distance: distance of the run in miles
+    """
+    return mul_time(duration, 1/distance)
+
+print(average_pace(duration, 100))
 
 
 def main():
