@@ -59,5 +59,3 @@ def multall(*nums):
     return result
 
 print(multall(2, 3, 4, 5))
-
-
