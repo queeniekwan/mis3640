@@ -28,7 +28,6 @@ class Course():
         if self.enrolled < self.capacity and other.enrolled < other.capacity:
             return f'You can take both courses! They both have available spots.'
         elif self.enrolled >= self.capacity and other.enrolled >= other.capacity:
-            print('b')
             return f'Oh no, both courses are full. You should look for other courses'
         elif self.enrolled < self.capacity and other.enrolled >= other.capacity: 
             return f'You should take {self.title}! There is only {self.enrolled} enrolled students and there are {self.capacity} spots.'
