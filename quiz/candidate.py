@@ -53,8 +53,6 @@ def main():
     print(clinton)
     print('Does Trump win?')
     print(trump > clinton)
-    print(trump.votes)
-    print(clinton.votes)
 
 if __name__ == '__main__':
     main()
